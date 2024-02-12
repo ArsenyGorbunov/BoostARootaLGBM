@@ -168,7 +168,7 @@ def _reduce_vars_sklearn(x, y, clf, this_round, cutoff, n_iterations, delta, sil
             pass
 
         try:
-            importance = clf.feature_importances_
+            importance = clf.feature_importance()
             df2['fscore' + str(i)] = importance
         except ValueError:
             print("this clf doesn't have the feature_importances_ method.  Only Sklearn tree based methods allowed")
